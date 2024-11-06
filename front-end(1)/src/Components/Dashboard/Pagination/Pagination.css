@@ -1,0 +1,93 @@
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  list-style-type: none;
+  padding: 0;
+  flex-wrap: wrap; /* يسمح بتوزيع الأزرار على عدة أسطر للشاشات الصغيرة */
+}
+
+.custom-pagination li {
+  margin: 5px; /* تعديل لتوزيع المسافات بالتساوي */
+}
+
+.pagination-tag-anchor {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #038edc;
+  background-color: #ffffff;
+  border: 1px solid #038edc;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.pagination-tag-anchor:hover {
+  background-color: #038edc;
+  color: #ffffff;
+  border-color: #038edc;
+}
+
+.custom-pagination .selected .pagination-tag-anchor {
+  background-color: #038edc;
+  color: #ffffff;
+  border: none;
+}
+
+.custom-pagination .next .pagination-tag-anchor,
+.custom-pagination .previous .pagination-tag-anchor {
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #038edc;
+  border-radius: 20px;
+  padding: 8px 16px;
+  border: 1px solid #038edc;
+}
+
+.custom-pagination .next .pagination-tag-anchor:hover,
+.custom-pagination .previous .pagination-tag-anchor:hover {
+  background-color: #005a8c;
+  color: #ffffff;
+  border-color: #005a8c;
+}
+
+/* تصميم الحالة المعطلة */
+.pagination-tag-anchor.disabled {
+  color: #cccccc;
+  border-color: #cccccc;
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.pagination-tag-anchor.disabled:hover {
+  background-color: #f0f0f0;
+  color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* إعدادات الاستجابة لحجم الشاشة */
+@media (max-width: 768px) {
+  .pagination-tag-anchor {
+    padding: 10px 14px; /* زيادة حجم الأزرار */
+    font-size: 0.9rem;
+  }
+  .custom-pagination .next .pagination-tag-anchor,
+  .custom-pagination .previous .pagination-tag-anchor {
+    padding: 10px 14px; /* زيادة حجم أزرار التالي والسابق */
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-tag-anchor {
+    padding: 12px 16px; /* زيادة حجم الأزرار بشكل أكبر */
+    font-size: 1rem;
+  }
+  .custom-pagination .next .pagination-tag-anchor,
+  .custom-pagination .previous .pagination-tag-anchor {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+}
